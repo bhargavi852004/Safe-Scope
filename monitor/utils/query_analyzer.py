@@ -1,6 +1,6 @@
 import requests
 
-TOGETHER_API_KEY = "45f7513c7ceabf752c224ab6fe0d168db0adfcd87f9fd58f3fd95ea3b9b3dc31"
+TOGETHER_API_KEY = ""
 TOGETHER_URL = "https://api.together.xyz/v1/chat/completions"
 TOGETHER_MODEL = "togethercomputer/m2-bert-80M-8k-retrieval"
 
