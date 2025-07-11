@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Risk Alerts - SafeWebGuard</title>
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+</head>
+<body>
+  <header>
+    <h1>🔔 Risk Alerts</h1>
+    <a href="{% url 'dashboard' %}">← Back to Dashboard</a>
+  </header>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Child Email</th>
+          <th>Reason</th>
+          <th>Page URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for alert in alerts %}
+        <tr>
+          <td>{{ alert.triggered_at }}</td>
+          <td>{{ alert.child_email }}</td>
+          <td>{{ alert.reason }}</td>
+          <td><a href="{{ alert.page_url }}" target="_blank">View</a></td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4">No alerts available.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

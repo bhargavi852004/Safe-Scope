@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeWebGuard - Alerts</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+<header>
+    <h1>👨‍👩‍👧 SafeWebGuard - Alerts</h1>
+    <div class="top-right">
+        <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+    </div>
+</header>
+
+<section class="alerts-section">
+    <h2>🚨 Risk Alerts</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Title</th>
+                <th>Risk Level</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alert in alerts %}
+            <tr>
+                <td>{{ alert.timestamp }}</td>
+                <td>{{ alert.title }}</td>
+                <td>{{ alert.risk_level }}</td>
+                <td>{{ alert.status }}</td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4">No alerts available.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+<footer>
+    <p>&copy; 2025 SafeWebGuard | Privacy First. Protection Always.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - SafeScope : An Intelligent Online Behaviour Tracker</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: url("{% static 'images/Login.jpg' %}") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;  /* changed from flex-start */
+            align-items: center;      /* already present */
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 400px;
+            /* removed margin-left */
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 40px 30px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+
+
+        .title-bar {
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .title-bar h1 {
+            font-size: 38px;
+            color: #fffef4;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin: 0;
+            padding: 10px 20px;
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            border-radius: 12px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .login-box label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .login-box input::placeholder {
+            color: #eee;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background-color: #f4511e;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-box button:hover {
+            background-color: #d63b0f;
+        }
+
+        .login-box p {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .login-box a {
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .login-box {
+                margin: 0;
+                width: 100%;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title-bar">
+        <h1>SafeScope: An Intelligent Online Behaviour Tracker</h1>
+    </div>
+
+    <div class="login-box">
+        <h2>Sign In</h2>
+
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li style="color: red;">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="id_email">Email</label>
+            {{ form.email }}
+
+            <label for="id_password">Password</label>
+            {{ form.password }}
+
+            <button type="submit">Log In</button>
+        </form>
+
+        <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+    </div>
+</body>
+</html>
