@@ -82,11 +82,11 @@ DATABASES = {
         'ENGINE': 'djongo',  # Use djongo to connect to MongoDB
         'NAME': 'safewebguard_db',
         'CLIENT': {
-            'host': 'mongodb+srv://tagtrendzz:zfYpR5a15DKBzxuq@cluster0.7jv5hao.mongodb.net/safewebguard_db?retryWrites=true&w=majority&appName=Cluster0',
-            'username': 'tagtrendzz',
-            'password': 'zfYpR5a15DKBzxuq',
+            'host': '',
+            'username': '',
+            'password': '',
             'authSource': 'admin',
-            'authMechanism': 'SCRAM-SHA-1',
+            'authMechanism': '',
         }
     }
 }
@@ -119,16 +119,16 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'projectb1885@gmail.com'
-EMAIL_HOST_PASSWORD = 'uiqo vaau gpcz uepk'  # You should store this securely in environment variables or use django-environ
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''  # You should store this securely in environment variables or use django-environ
 from mongoengine import connect
 
 # Connect to MongoDB
 connect(
     db='safewebguard_db',
-    username='tagtrendzz',
-    password='zfYpR5a15DKBzxuq',
-    host='mongodb+srv://tagtrendzz:zfYpR5a15DKBzxuq@cluster0.7jv5hao.mongodb.net/safewebguard_db',
+    username='',
+    password='',
+    host='mongodb',
     authentication_source='admin',  # Important if you're using Atlas
     authMechanism='SCRAM-SHA-1'
 )
