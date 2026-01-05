@@ -1,6 +1,5 @@
-# GuardianAI : An Intelligent Real-Time Digital Safety Platform
-
-**GuardianAI** is a **startup-grade, real-time AI platform** designed for parents, schools, and enterprises to monitor online activity and protect users from harmful content. It combines **LLM-powered contextual reasoning, prompt-engineered moderation, age-aware evaluation, and explainable alerts** across multiple languages.  
+# GuardianAI : Parental Web Monitoring System with LLM-Based Content Detection                          
+Designed and implemented a backend-centric parental monitoring system that captures real-time browsing activity via a browser extension and converts raw events into risk-based insights and alerts for parents. Built a modular risk analysis pipeline that performs semantic intent detection on search queries, assigns configurable risk scores, and triggers alerts only when meaningful thresholds are crossed to avoid alert fatigue. Architected a secure client–server system with strict validation, duplicate handling, and backend authorization checks, storing high-volume semi-structured activity data efficiently for dashboard visualization.
 
 ---
 
@@ -25,9 +24,6 @@
   - Generates **human-readable explanations** for flagged content  
   - Example: *“This page was blocked because it contains implicit sexual references unsafe for minors.”*
 
-* **Multi-Language Support**  
-  - Detects content in English, Hindi, Telugu, Hinglish, and more  
-  - Translates and analyzes for consistent risk scoring
 
 * **Modern Admin Dashboard**  
   - Live alerts, risk trends, category & language analytics  
