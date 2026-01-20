@@ -1,5 +1,6 @@
-# GuardianAI : An Intelligent Real-time Digital Safety Platform                   
-Designed and implemented a backend-centric parental monitoring system that captures real-time browsing activity via a browser extension and converts raw events into risk-based insights and alerts for parents. Built a modular risk analysis pipeline that performs semantic intent detection on search queries, assigns configurable risk scores, and triggers alerts only when meaningful thresholds are crossed to avoid alert fatigue. Architected a secure client–server system with strict validation, duplicate handling, and backend authorization checks, storing high-volume semi-structured activity data efficiently for dashboard visualization.
+# Safe Scope : Parental Web Monitoring System with LLM-Based Content Detection               
+–	Developed Safe Scope, a backend-driven parental web monitoring system that converts raw browsing activity into actionable, risk-aware alerts using intent-based analysis. Implemented secure APIs and a risk-scoring mechanism to analyze search behavior, reduce false positives, and provide meaningful insights instead of raw activity logs.
+
 
 ---
 
